@@ -53,15 +53,18 @@ IS_AUTO_MODE = DEFAULT_MODEL.lower() == "auto"
 
 # TEMPERATURE_ANALYTICAL: Used for tasks requiring precision and consistency
 # Ideal for code review, debugging, and error analysis where accuracy is critical
-TEMPERATURE_ANALYTICAL = 1.0  # For code review, debugging
+# Override with TEMPERATURE_ANALYTICAL env var (e.g., "0.3" for more deterministic output)
+TEMPERATURE_ANALYTICAL = float(get_env("TEMPERATURE_ANALYTICAL", "1.0"))
 
 # TEMPERATURE_BALANCED: Middle ground for general conversations
 # Provides a good balance between consistency and helpful variety
-TEMPERATURE_BALANCED = 1.0  # For general chat
+# Override with TEMPERATURE_BALANCED env var
+TEMPERATURE_BALANCED = float(get_env("TEMPERATURE_BALANCED", "1.0"))
 
 # TEMPERATURE_CREATIVE: Higher temperature for exploratory tasks
 # Used when brainstorming, exploring alternatives, or architectural discussions
-TEMPERATURE_CREATIVE = 1.0  # For architecture, deep thinking
+# Override with TEMPERATURE_CREATIVE env var
+TEMPERATURE_CREATIVE = float(get_env("TEMPERATURE_CREATIVE", "1.0"))
 
 # Thinking Mode Defaults
 # DEFAULT_THINKING_MODE_THINKDEEP: Default thinking depth for extended reasoning tool
