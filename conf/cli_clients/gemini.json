@@ -17,6 +17,10 @@
     "codereviewer": {
       "prompt_path": "systemprompts/clink/default_codereviewer.txt",
       "role_args": []
+    },
+    "researcher": {
+      "prompt_path": "systemprompts/clink/gemini_researcher.txt",
+      "role_args": []
     }
   }
 }
